@@ -24,3 +24,16 @@ body {
       font-size: 12px;
       margin: 1px;
     }
+    .product-form {
+      background: #fff;
+      border: 1px solid #dee2e6;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    .product-form img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
