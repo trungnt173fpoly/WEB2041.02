@@ -83,5 +83,11 @@ class Model {
         : $result->fetch(PDO::FETCH_OBJ);
 
     }
+    protected function all($option = []){
+        return $this->executeQuery($option);
+    }
+    protected function first($option = []){
+        return $this->executeQuery($option, self::FETCH_FIRST);
+    }
 }
 ?>

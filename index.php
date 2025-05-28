@@ -10,5 +10,7 @@ include_once 'configs/env.php';
 include_once 'configs/helper.php';
 // $model = new Model();
 // var_dump($model->getConnection());
-include 'views/product/add.php';
+// include 'views/product/add.php';
+$pro = new ProductController();
+$pro->index();
 ?>
