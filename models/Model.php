@@ -12,10 +12,10 @@ class Model {
     // phạm_vi_truy_cập $tên_thuộc_tinh = giá_trị; (có thể gán giá trị luôn 
     // hoặc không)
     // phạm_vi_truy_cập: public, private, protected
-    private $host = "localhost"; //địa chỉ mysql server sẽ kết nối đến
-    private $dbname="web2041.02"; //tên database sẽ kết nối đến
-    private $username = "root"; //username để kết nối đến database 
-    private $password = ""; // mật khẩu để kết nối đến database
+    // private $host = "localhost"; //địa chỉ mysql server sẽ kết nối đến
+    // private $dbname="web2041.02"; //tên database sẽ kết nối đến
+    // private $username = "root"; //username để kết nối đến database 
+    // private $password = ""; // mật khẩu để kết nối đến database
     // Tạo thuộc tính kết nối
     private $pdo;
     // Thuộc tính chứa SQL
@@ -33,14 +33,11 @@ class Model {
     private function getConnection(){
         try{
             $connection = new PDO(
-                "mysql:host=$this->host; 
-                dbname=$this->dbname;", 
-                $this->username, 
-                $this->password,
-                [
-                    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-                    PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"
-                ]
+                "mysql:host=".DB_HOST."; 
+                dbname=".DB_NAME.";", 
+                DB_USER, 
+                DB_PASS,
+                DB_OPTIONS
             );
             // Dùng để test
             // if($connection){
