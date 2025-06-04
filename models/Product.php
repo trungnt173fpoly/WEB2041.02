@@ -11,5 +11,17 @@ class Product extends Model{
         $this->conn->setSql("SELECT * FROM $this->table");
         return $this->conn->all();
     }
+    public function addProduct($name, $price, $image, $quantity){
+        $this->conn->setSql("INSERT INTO $this->table VALUES (?,?,?,?)");
+        return $this->conn->execute([$name, $price, $image, $quantity]);
+    }
+    public function editProduct($name, $price, $image, $quantity, $id){
+        $this->conn->setSql("UPDATE $this->table SET `name`= ?,`price`= ?,`image`= ?,`quantity`= ? WHERE `id`= ?");
+        return $this->conn->execute([$name, $price, $image, $quantity, $id]);
+    }
+    public function deleteProduct($id){
+        $this->conn->setSql("UPDATE $this->table SET `name`= ?,`price`= ?,`image`= ?,`quantity`= ? WHERE `id`= ?");
+        return $this->conn->execute([$name, $price, $image, $quantity, $id]);
+    }
 }
 ?>

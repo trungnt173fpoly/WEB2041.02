@@ -12,7 +12,7 @@
       </div>
 
       <!-- Product Form 1 -->
-      <form class="product-form" method="POST" action="" enctype="multipart/form-data">
+      <form class="product-form" method="POST" action="index.php?action=add" enctype="multipart/form-data">
         <div class="mb-3">
           <label class="form-label">Product Name</label>
           <input type="text" class="form-control" name="name" placeholder="Nhập tên sản phẩm">
@@ -29,7 +29,7 @@
           <label class="form-label">Quantity</label>
           <input type="text" class="form-control" name="quantity" placeholder="Nhập số lượng sản phẩm">
         </div>
-        <button type="submit" class="btn btn-success">Save</button>
+        <button type="submit" name="btnSave" value="save" class="btn btn-success">Save</button>
       </form>
     </main>
     <?php 
