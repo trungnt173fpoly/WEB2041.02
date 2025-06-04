@@ -20,7 +20,7 @@ switch($action) {
         break;
     case 'add':
         $controPro = new ProductController();
-        $controPro->index();
+        $controPro->create();
         break;
     default:
         http_response_code(404);

@@ -9,5 +9,8 @@
             // Giao diện 
             include_once 'views/product/list.php';
         }
+        public function create(){
+            include_once 'views/product/add.php';
+        }
     }
 ?>
