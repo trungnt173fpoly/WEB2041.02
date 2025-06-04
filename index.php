@@ -22,7 +22,7 @@ switch($action) {
         $controPro = new ProductController();
         $controPro->create();
         break;
-    case 'edit':
+    case 'update':
         $id = isset($_GET['id']) ? $_GET['id'] : null;
         $controPro = new ProductController();
         $controPro->update($id);
