@@ -11,6 +11,20 @@ include_once 'configs/helper.php';
 // $model = new Model();
 // var_dump($model->getConnection());
 // include 'views/product/add.php';
-$pro = new ProductController();
-$pro->index();
+// điều hướng
+$action = isset($_GET['action']) ? $_GET['action'] : '/';
+switch($action) {
+    case '/': 
+        $controPro = new ProductController();
+        $controPro->index();
+        break;
+    case 'add':
+        $controPro = new ProductController();
+        $controPro->index();
+        break;
+    default:
+        http_response_code(404);
+        echo "Đường dẫn không tồn tại";
+        break;
+}
 ?>
