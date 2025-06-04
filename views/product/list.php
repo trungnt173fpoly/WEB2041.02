@@ -31,13 +31,15 @@
             <tr>
               <td><?php echo $product->name ?></td>
               <td><?php echo $product->price ?></td>
-              <td><img src="https://via.placeholder.com/40" class="rounded" alt="Product"></td>
+              <td><img src="<?php echo storage($product->image) ?>" class="rounded" alt="Product"></td>
               <td>
                 <?php echo $product->quantity ?>
               </td>
               <td>
+                <a href="index.php?action=update&id=<?php echo $product->id ?>">
                 <button>Sửa</button>
-                <button>Xóa</button>
+                </a>
+                <a href="index.php?action=delete&id=<?php echo $product->id ?>"><button>Xóa</button></a>
               </td>
             </tr>
             <?php 

@@ -22,6 +22,16 @@ switch($action) {
         $controPro = new ProductController();
         $controPro->create();
         break;
+    case 'edit':
+        $id = isset($_GET['id']) ? $_GET['id'] : null;
+        $controPro = new ProductController();
+        $controPro->update($id);
+        break;
+     case 'delete':
+        $id = isset($_GET['id']) ? $_GET['id'] : null;
+        $controPro = new ProductController();
+        $controPro->delete($id);
+        break;
     default:
         http_response_code(404);
         echo "Đường dẫn không tồn tại";

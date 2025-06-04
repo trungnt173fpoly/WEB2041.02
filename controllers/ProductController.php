@@ -29,9 +29,23 @@
                 $targetFile = $targetDir.$newFileName;
                 move_uploaded_file($image['tmp_name'],  $targetFile);
                 $modelPro = new Product();
-                
+                $modelPro->addProduct(null, $name, $price, $newFileName, $quantity);
+                header("Location: index.php");
             }
             include_once 'views/product/add.php';
+        }
+        // Xóa 
+        public function delete($id){
+            $modelPro = new Product();
+            $modelPro->deleteProduct($id);
+            header("Location: index.php");
+        }
+        // Sửa
+        public function update($id){
+            // Hiển thị kết quả của
+            $modelPro = new Product();
+            $product = $modelPro->getIDProduct($id);
+            include_once 'views/product/edit.php';
         }
     }
 ?>
